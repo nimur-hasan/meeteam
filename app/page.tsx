@@ -6,10 +6,9 @@ import Input from "@/theme/inputs/Input";
 import { Formik, useFormik } from "formik";
 import Image from "next/image";
 import Link from "next/link";
-import * as Yup from 'yup'
+import * as Yup from "yup";
 
 export default function Home() {
-
   const validationSchema = Yup.object().shape({
     email: Yup.string()
       .email("El correo electrónico debe ser un correo electrónico válido.")
@@ -17,14 +16,13 @@ export default function Home() {
     password: Yup.string().required("Se requiere contraseña."),
   });
 
-
   return (
-    <main className="grid min-h-screen w-screen grid-cols-2">
+    <main className="flex min-h-screen w-screen grid-cols-2 flex-col md:grid">
       <div className="col-span-1">
-        <div className="h-full px-16">
+        <div className="h-full md:px-16">
           <div className="flex h-full flex-col justify-between">
             {/* Logo */}
-            <div className="py-[18px]">
+            <div className="flex justify-center py-[18px] md:block">
               <img src="/assets/logo.svg" />
             </div>
 
@@ -41,11 +39,11 @@ export default function Home() {
               }}
             >
               {({ errors, values, handleSubmit, handleChange }) => (
-                <form onSubmit={handleSubmit} className="px-14">
-                  <h2 className="text-Azul-1 text-center font-[Unbounded] text-5xl font-bold">
+                <form onSubmit={handleSubmit} className="px-4">
+                  <h2 className="text-Azul-1 text-center font-[Unbounded] text-4xl font-bold md:text-5xl">
                     Iniciar Sesión
                   </h2>
-                  <p className="text-Negro mt-6 text-lg">
+                  <p className="text-Azul-1 md:text-Negro mt-6 md:text-lg">
                     Conecta tu talento con el mundo
                   </p>
 
@@ -85,7 +83,7 @@ export default function Home() {
                       </SecondaryButton>
                     </div>
                     <div className="flex justify-center">
-                      <div className="flex items-center gap-1.5">
+                      <div className="text-Azul-1 flex items-center gap-1.5">
                         <div>No tienes una cuenta?</div>
                         <Link href="#">Regístrate</Link>
                       </div>
@@ -95,19 +93,24 @@ export default function Home() {
               )}
             </Formik>
             {/* Copyright mark */}
-            <div className="py-[1.625rem]">© 2024 Meeteam</div>
+            <div className="text-Azul-1 hidden px-4 py-[1.625rem] md:block md:px-0">
+              © 2024 Meeteam
+            </div>
           </div>
         </div>
       </div>
 
       {/* Placeholder Image */}
-      <div className="relative col-span-1 ">
+      <div className="md:auto relative col-span-1 mt-16  h-[400px] md:mt-0">
         <Image
           layout="fill"
           objectFit="cover"
           src="/assets/images/placeholder-image.png"
           alt="Image"
         />
+        <div className="text-Blanco absolute bottom-0 left-0 right-0 block px-4 py-[1.625rem] text-center md:hidden md:px-0">
+          © 2024 Meeteam
+        </div>
       </div>
     </main>
   );

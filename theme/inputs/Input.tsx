@@ -44,7 +44,7 @@ export default function Input({
         type={type}
         value={value}
         onChange={onChange}
-        className="bg-Blanco border-Negro mt-3 rounded-[10px] border p-3"
+        className="bg-Blanco border-Negro mt-2 md:mt-3 rounded-[10px] border p-3"
         placeholder={placeholder}
         // required={required}
         {...rest}
