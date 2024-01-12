@@ -101,7 +101,7 @@ export default function Home() {
       </div>
 
       {/* Placeholder Image */}
-      <div className="md:auto relative col-span-1 mt-16  h-[400px] md:mt-0">
+      <div className="md:auto relative col-span-1 mt-16  h-[400px] md:h-full md:mt-0">
         <Image
           layout="fill"
           objectFit="cover"
