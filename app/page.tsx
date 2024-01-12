@@ -19,10 +19,10 @@ export default function Home() {
   return (
     <main className="flex min-h-screen w-screen grid-cols-2 flex-col md:grid">
       <div className="col-span-1">
-        <div className="h-full md:px-16">
+        <div className="h-full md:px-14">
           <div className="flex h-full flex-col justify-between">
             {/* Logo */}
-            <div className="flex justify-center py-[18px] md:block">
+            <div className="flex justify-center py-[14px] md:py-[18px] md:block">
               <img src="/assets/logo.svg" />
             </div>
 
@@ -39,15 +39,15 @@ export default function Home() {
               }}
             >
               {({ errors, values, handleSubmit, handleChange }) => (
-                <form onSubmit={handleSubmit} className="px-4">
+                <form onSubmit={handleSubmit} className="px-4 md:px-16 ">
                   <h2 className="text-Azul-1 text-center font-[Unbounded] text-4xl font-bold md:text-5xl">
                     Iniciar Sesión
                   </h2>
-                  <p className="text-Azul-1 md:text-Negro mt-6 md:text-lg">
+                  <p className="text-Azul-1 md:text-Negro mt-5 md:mt-6 md:text-lg">
                     Conecta tu talento con el mundo
                   </p>
 
-                  <div className="mt-8 flex flex-col gap-6">
+                  <div className="mt-6 md:mt-8 flex flex-col gap-6">
                     <Input
                       id="email"
                       name="email"
